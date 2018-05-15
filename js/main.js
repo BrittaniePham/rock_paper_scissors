@@ -1,6 +1,8 @@
 var options = ["rock", "paper", "scissors"]
 //var compChoice = options[Math.floor(Math.random() * options.length)]
 var compPicked = document.getElementById('compPicked')
+var usersScore = document.getElementById('usersScore')
+var compsScore = document.getElementById('compsScore')
 var userScore = 0
 var compScore = 0
 
@@ -10,29 +12,24 @@ function selectChoice(option) {
     userChoice = 'rock'
     userPicked.innerHTML = "You picked: " + option
     compPicked.innerHTML = "The computer picked: " + compChoice
-    compareUserRock(userChoice, compChoice)
-    compareUserPaper(userChoice, compChoice)
-    compareUserScissors(userChoice, compChoice)
   } else if (option == 'paper') {
     userChoice = 'paper'
     userPicked.innerHTML = "You picked: " + option
     compPicked.innerHTML = "The computer picked: " + compChoice
-    compareUserRock(userChoice, compChoice)
-    compareUserPaper(userChoice, compChoice)
-    compareUserScissors(userChoice, compChoice)
   } else if (option == 'scissors') {
     userChoice = 'scissors'
     userPicked.innerHTML = "You picked: " + option
     compPicked.innerHTML = "The computer picked: " + compChoice
-    compareUserRock(userChoice, compChoice)
-    compareUserPaper(userChoice, compChoice)
-    compareUserScissors(userChoice, compChoice)
   }
+  compareUserRock(userChoice, compChoice)
+  compareUserPaper(userChoice, compChoice)
+  compareUserScissors(userChoice, compChoice)
+  printScore(userScore, compScore)
 }
 
 function compareUserRock(userChoice, compChoice) {
   if (userChoice == 'rock' && compChoice == 'rock'){
-    compare.innerHTML = "It was a tie!"
+    compare.innerHTML = "IT'S A TIE!"
   }
   else if (userChoice == 'rock' && compChoice == 'paper') {
     compare.innerHTML = "Paper beats rock! You lost!"
@@ -46,7 +43,7 @@ function compareUserRock(userChoice, compChoice) {
 
 function compareUserPaper(userChoice, compChoice) {
   if (userChoice == 'paper' && compChoice == 'paper'){
-    compare.innerHTML = "It was a tie!"
+    compare.innerHTML = "IT'S A TIE!"
   }
   else if (userChoice == 'paper' && compChoice == 'rock') {
     compare.innerHTML = "Paper beats rock! You win!"
@@ -60,7 +57,7 @@ function compareUserPaper(userChoice, compChoice) {
 
 function compareUserScissors(userChoice, compChoice) {
   if (userChoice == 'scissors' && compChoice == 'scissors') {
-    compare.innerHTML = "It was a tie!"
+    compare.innerHTML = "IT'S A TIE!"
   }
   else if (userChoice == 'scissors' && compChoice == 'rock') {
     compare.innerHTML = "Rock beats scissors! You lost!"
@@ -72,7 +69,7 @@ function compareUserScissors(userChoice, compChoice) {
   }
 }
 
-function printScore() {
-  score.innerHTML = userScore
-  score.innerHTML = compScore
+function printScore(userScore, compScore) {
+  usersScore.innerHTML = "Your score is: " + userScore
+  compsScore.innerHTML = "The computer's score is: " + compScore
 }
