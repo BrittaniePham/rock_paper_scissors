@@ -7,16 +7,20 @@
   <body>
     <h1 class="center">Rock Paper Scissors</h1>
 
-    <img src="images/rock.png" alt="rock" id=rock onclick="selectChoice('rock')">
-    <img src="images/paper.png" alt="paper" id=paper onclick="selectChoice('paper')">
-    <img src="images/scissors.png" alt="scissors" id=scissors onclick="selectChoice('scissors')">
+    <div class="center">
+      <img src="images/rock.png" alt="rock" id=rock onclick="selectChoice('rock')">
+      <img src="images/paper.png" alt="paper" id=paper onclick="selectChoice('paper')">
+      <img src="images/scissors.png" alt="scissors" id=scissors onclick="selectChoice('scissors')">
+    </div>
 
     <p id=userPicked> You picked: </p>
     <p id=compPicked> The computer picked: </p>
-    <p id=compare></p>
-    <p id=usersScore></p>
-    <p id=compsScore></p>
-
+    <div class=scores>
+      <p id=compare></p>
+      <p id=usersScore> Your score is: </p>
+      <p id=compsScore> The computer's score is: </p>
+    </div>
+    
     <button onclick='restart()'>restart</button>
     <script src="./js/main.js"></script>
   </body>
